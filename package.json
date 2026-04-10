@@ -1,0 +1,38 @@
+{
+  "name": "bebras",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --passWithNoTests",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GeraldVargas/Bebras-Bolivia.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GeraldVargas/Bebras-Bolivia/issues"
+  },
+  "homepage": "https://github.com/GeraldVargas/Bebras-Bolivia#readme",
+  "description": "",
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.58.1",
+    "@typescript-eslint/parser": "^8.58.1",
+    "eslint": "^9.39.4",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-prettier": "^5.5.5",
+    "husky": "^8.0.0",
+    "jest": "^30.3.0",
+    "lint-staged": "^16.4.0",
+    "prettier": "^3.8.2",
+    "ts-jest": "^29.4.9",
+    "typescript": "^6.0.2"
+  }
+}
