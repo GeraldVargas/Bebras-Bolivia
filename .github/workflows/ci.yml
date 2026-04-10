@@ -1,0 +1,40 @@
+name: Node.js CI (project name)
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  quality-check:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x]
+    steps:
+      - name: Code Checkout
+        uses: actions/checkout@v4
+      - name: Node.js setup ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - name: Clean dependency install
+        run: npm install
+      - name: Security auditing
+        run: npm audit --audit-level=high
+        continue-on-error: true # risk note
+      - name: Format check (Prettier)
+        run: npm run format
+      - name: Check standard (Lint)
+        run: npm run lint
+      - name: Type check (TypeScript)
+        run: npx tsc --noEmit
+      - name: Run Tests
+        run: npm test
+        env:
+          NODE_ENV: test
+      - name: Build Check
+        run: echo "No build required yet"
