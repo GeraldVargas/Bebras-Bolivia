@@ -1,0 +1,25 @@
+BITÁCORA DE PREPARACIÓN DE INFRAESTRUCTURA Y CI
+Estudiante:Gerald Emanuel Vargas Morales
+Cod SIS.:202405633
+Proyecto: Bebras 
+
+1. Instalación de Herramientas Base:
+   - Se instaló NVM y Node.js LTS[cite: 3].
+   - Se instaló npm, GIT y Docker[cite: 4, 5, 6].
+   - Se preparó VS Code con las extensiones solicitadas: ESLint, Prettier, SonarQube, Jest, Error Lens, Git Lens y Docker[cite: 7, 10, 11, 12, 13, 14, 15, 16].
+
+2. Configuración de Estándares de Código:
+   - Se instalaron las dependencias de desarrollo (eslint, prettier, husky, lint-staged, etc.)[cite: 18, 19].
+   - Se crearon los archivos de configuración .prettierrc y .eslintrc.json con las reglas establecidas[cite: 20, 33].
+   - Se actualizaron los scripts del package.json para ejecutar lint, format y test[cite: 82, 83, 84].
+
+3. Configuración de Husky (Git Hooks):
+   - Se inicializó Husky para el proceso de integración[cite: 70].
+   - Se editó el archivo .husky/pre-commit para ejecutar npx lint-staged[cite: 73, 75].
+   - Se configuró el hook pre-push para que no suba código si los test fallan[cite: 76].
+
+4. Integración Continua (GitHub Actions):
+   - Se preparó GitHub Actions creando el archivo .github/workflows/ci.yml[cite: 92, 93].
+   - El pipeline está configurado para ejecutarse en las ramas main y develop, verificando la calidad en las versiones de Node 18.x y 20.x[cite: 98, 108].
+
+URL del repositorio: https://github.com/GeraldVargas/Bebras-Bolivia
